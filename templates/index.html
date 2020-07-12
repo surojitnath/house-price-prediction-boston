@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+
+	<h1>Predict House Price Analysis</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form  action="{{ url_for('predict')}}"method="post" >
+        <label for="CRIM">capita crime rate by town : </label>
+        <input type="text" name="CRIM" placeholder="CRIM" required="required" />
+
+        <br><label for="ZN">proportion of residential land zoned for lots over 25,000 sq.ft. : </label>
+        <input type="text" name="ZN" placeholder="ZN" required="required" />
+
+        <br><label for="INDUS"> proportion of non-retail business acres per town : </label>
+        <input type="text" name="INDUS" placeholder="INDUS" required="required" />
+
+        <br><label for="CHAS">Charles River dummy variable : </label>
+		<input type="text" name="CHAS" placeholder="CHAS" required="required" />
+
+        <br><label for="NOX">nitric oxides concentration : </label>
+        <input type="text" name="NOX" placeholder="NOX" required="required" />
+
+        <br><label for="RM">average number of rooms per dwelling : </label>
+        <input type="text" name="RM" placeholder="RM" required="required" />
+
+        <br><label for="AGE">proportion of owner-occupied units built prior to 1940 : </label>
+        <input type="text" name="AGE" placeholder="AGE" required="required" />
+
+        <br><label for="DIS">weighted distances to five Boston employment centres : </label>
+        <input type="text" name="DIS" placeholder="DIS" required="required" />
+
+        <br><label for="RAD">index of accessibility to radial highways : </label>
+        <input type="text" name="RAD" placeholder="RAD" required="required" />
+
+        <br><label for="TAX">full-value property-tax rate per $10,000 : </label>
+        <input type="text" name="TAX" placeholder="TAX" required="required" />
+
+        <br><label for="PTRATIO">pupil-teacher ratio by town : </label>
+        <input type="text" name="PTRATIO" placeholder="PTRATIO" required="required" />
+
+        <br><label for="B">1000(Bk - 0.63)^2 where Bk is the proportion of blacks by town : </label>
+        <input type="text" name="B" placeholder="B" required="required" />
+
+        <br><label for="LSTAT">% lower status of the population : </label>
+        <input type="text" name="LSTAT" placeholder="LSTAT" required="required" />
+
+        <br><button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
